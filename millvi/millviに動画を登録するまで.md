@@ -17,7 +17,6 @@ curl "https://capi.miovp.com/report/file/upload " -F "ticket=(チケット文字
 
 2.　millviに動画を登録
 次に以下のcurlを実行する。
-[参照URL](https://support-mv.millvi.jp/hc/ja/articles/5947278255513-contents-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E7%99%BB%E9%8C%B2-)
 ```
 curl "https://capi.miovp.com/contents/create_video" -X POST -d "ticket=(チケット文字列)" -d "name=testmovie" -d "autocommit=1" -d "filekey=(ファイルキー)"
 ```
