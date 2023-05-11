@@ -20,7 +20,6 @@ curl "https://capi.miovp.com/report/file/upload " -F "ticket=(チケット文字
 
 namespace App\Http\Controllers\Schools\Api;
 use GuzzleHttp\Client;
-use illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use GuzzleHttp\Psr7;
 
@@ -56,6 +55,7 @@ public function uploadFile($ticket, $filename)
 ```
 
 millviでファイルをアップロードする際、**multipart/form-dataメディアタイプでPOSTメソッドでリクエストを送信する必要**があるので、Guzzleを利用する時も** 'multipart'**を使っている。
+また、Guzzleでmultipartを使うと、自動的にheaderは決まるので、設定する必要がない。
 
 
 2.　millviに動画を登録
@@ -73,9 +73,6 @@ curl "https://capi.miovp.com/contents/create_video" -X POST -d "ticket=(チケ�
 
 namespace App\Http\Controllers\Schools\Api;
 use GuzzleHttp\Client;
-use illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
-use GuzzleHttp\Psr7;
 
 略
 
